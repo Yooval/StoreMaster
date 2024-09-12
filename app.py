@@ -5,6 +5,7 @@ from flask import Flask, jsonify
 from dotenv import load_dotenv
 from flask_smorest import Api
 from db import db
+from datetime import timedelta
 import models
 from flask_jwt_extended import JWTManager
 from resources.item import blp as ItemBlueprint
@@ -28,6 +29,7 @@ def create_app(db_url=None):
     app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_url or os.getenv("DATABASE_URL", "sqlite:///data.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(minutes=1)
     db.init_app(app)
     migrate = Migrate(app, db)
     api = Api(app)
