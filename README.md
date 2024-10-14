@@ -2,15 +2,7 @@
 
 
 ## Overview
-This project is a RESTful API built with Flask, using PostgreSQL for efficient data storage and management. The API is designed to handle users, stores, and tags, allowing users to create and manage stores, with each store associated with specific items and categorized using tags. The API provides endpoints for adding, updating, and retrieving these entities, making it a flexible solution for managing structured data.
-
-It includes secure user authentication with JWT token management, and its scalable architecture ensures smooth handling of multiple CRUD operations.
-
-Key features include:
-
-**User authentication**: Secure login and token-based authentication using JWT.  
-**Data management**: CRUD operations for users, stores, and tags.  
-**PostgreSQL integration**: Provides robust data persistence and management.
+StoreMaster is a professional RESTful API built with Python, Flask, Docker, Flask-Smorest, and Flask-SQLAlchemy, utilizing PostgreSQL for efficient data storage and management. The API is designed to handle users, stores, and tags, enabling users to create and manage stores, with each store associated with specific items and categorized using tags. It provides flexible and scalable endpoints for adding, updating, and retrieving these entities, while ensuring secure user authentication through JWT token management. With its well-structured architecture, StoreMaster efficiently manages multiple CRUD operations and offers robust data persistence, making it a reliable solution for structured data management.
 
 
 
