@@ -8,9 +8,12 @@ It includes secure user authentication with JWT token management, and its scalab
 
 Key features include:
 
-###### User authentication: ##### Secure login and token-based authentication using JWT.
-###### Data management: ##### CRUD operations for users, stores, and tags.
-###### PostgreSQL integration: ##### Provides robust data persistence and management.
+###### User authentication: 
+Secure login and token-based authentication using JWT.
+###### Data management: 
+CRUD operations for users, stores, and tags.
+###### PostgreSQL integration:
+Provides robust data persistence and management.
 
 
  
