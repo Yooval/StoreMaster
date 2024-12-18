@@ -1,10 +1,13 @@
 
 ## Overview
-StoreMaster is a professional RESTful API built with Python, Flask, Docker, Flask-Smorest, and Flask-SQLAlchemy, utilizing PostgreSQL for efficient data storage and management. The API is designed to handle users, stores, and tags, enabling users to create and manage stores, with each store associated with specific items and categorized using tags. It provides flexible and scalable endpoints for adding, updating, and retrieving these entities, while ensuring secure user authentication through JWT token management. With its well-structured architecture, StoreMaster efficiently manages multiple CRUD operations and offers robust data persistence, making it a reliable solution for structured data management.
+**StoreMaster** is an E-commerce RESTful API built with Python, Flask, Docker, Flask-Smorest, and Flask-SQLAlchemy. Using PostgreSQL database. The application is designed to handle users, stores, and products with CRUD operations. The app;ication secure user authentication and autherization with JWT(Json Wen Token)  management.
 
+### Tech & Tools
 
-
- 
+- Docker: Used to create an isolated environment, ensuring consistency across systems.
+- Flask-Smorest: Ensures accurate and consistent APIs by validating inputs and outputs using pre-defined schemas.
+- Flask-sqlAlchemy:Simplify database integration by managing queries and models through an ORM layer.
+- 
 ## Installation
  
 1. Clone the repository:
