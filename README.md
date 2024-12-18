@@ -1,13 +1,14 @@
 
 ## Overview
-**StoreMaster** is an E-commerce RESTful API built with Python, Flask, Docker, Flask-Smorest, and Flask-SQLAlchemy. Using PostgreSQL database. The application is designed to handle users, stores, and products with CRUD operations. The app;ication secure user authentication and autherization with JWT(Json Wen Token)  management.
+**StoreMaster** is an E-commerce RESTful API built with Python, Flask, Docker, Flask-Smorest, and Flask-SQLAlchemy. Using PostgreSQL database. The application is designed to handle users, stores, and products with CRUD operations. The application secure user authentication and autherization with JWT(Json Wen Token) management. 
+
+All API requests documented in postmandocumented [here](https://documenter.getpostman.com/view/38510958/2sAYJ1m3KT#b130028a-058d-4d6e-9629-f03fd8694759). give it a try!
 
 ### Tech & Tools
 
 - Docker: Used to create an isolated environment, ensuring consistency across systems.
 - Flask-Smorest: Ensures accurate and consistent APIs by validating inputs and outputs using pre-defined schemas.
 - Flask-sqlAlchemy:Simplify database integration by managing queries and models through an ORM layer.
-- 
 ## Installation
  
 1. Clone the repository:
@@ -18,8 +19,7 @@
  
 2. Ensure you have Docker Desktop installed and running on your machine.
  
-3. Install Insomnia:
-   Download and install Insomnia from [Insomnia's official website](https://insomnia.rest/download).
+3. Install Postman:
  
 ## Local Development
  
@@ -30,7 +30,7 @@
  
 2. The API will be available at `http://localhost:5000`.
  
-3. Use Insomnia to test the API endpoints.
+3. Use Postman documentation to test the API endpoints [here](https://documenter.getpostman.com/view/38510958/2sAYJ1m3KT#b130028a-058d-4d6e-9629-f03fd8694759). .
  
 ## Deployment on Render
  
