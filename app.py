@@ -7,6 +7,8 @@ from flask_smorest import Api
 from db import db
 from datetime import timedelta
 import models
+import redis
+from rq import Queue
 from flask_jwt_extended import JWTManager
 from resources.item import blp as ItemBlueprint
 from resources.store import blp as StoreBlueprint
@@ -20,6 +22,10 @@ from blocklist import BLOCKLIST
 def create_app(db_url=None):
     app = Flask(__name__, instance_path=os.getcwd())
     load_dotenv()
+    connection = redis.from_url(
+        os.getenv("REDIS_URL")
+    )
+    app.queue = Queue("emails", connection=connection)
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
     app.config["API_VERSION"] = "v1"

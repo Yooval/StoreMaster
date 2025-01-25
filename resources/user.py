@@ -1,29 +1,37 @@
+import os
+import requests
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from passlib.hash import pbkdf2_sha256
+from sqlalchemy import or_
 from flask_jwt_extended import create_access_token, create_refresh_token, get_jwt_identity, jwt_required, get_jwt
 from blocklist import BLOCKLIST
 from db import db
 from models import UserModel
-from schemas import UserSchema
-
+from schemas import UserSchema, UserRegisterSchema
+from tasks import send_user_registration_email
+from flask import current_app
 blp = Blueprint("Users", "users", description="Operations on users")
 
 
 @blp.route("/register")
 class UserRegister(MethodView):
-    @blp.arguments(UserSchema)
+    @blp.arguments(UserRegisterSchema)
     def post(self, user_data):
-        if UserModel.query.filter(UserModel.username == user_data["username"]).first():
+        if UserModel.query.filter(or_(
+                UserModel.username == user_data["username"],
+                UserModel.email == user_data["email"]
+        )).first():
             abort(409, message="A user with that username already exist.")
 
         user = UserModel(username=user_data["username"],
+                         email=user_data["email"],
                          password=pbkdf2_sha256.hash(user_data["password"])  # Generate very long password for the
                          # short one.
                          )
         db.session.add(user)
         db.session.commit()
-
+        current_app.queue.enqueue(send_user_registration_email, user.email, user.username)
         return {"message": "User created successfully."}, 201
 
 
@@ -41,7 +49,7 @@ class UserLogin(MethodView):
         abort(401, message="Invalid credentials.")
 
 
-# block current token and creates a non-fresh one.
+# block current token and creates a fresh one.
 @blp.route("/refresh")
 class TokenRefresh(MethodView):
     @jwt_required(refresh=True)
