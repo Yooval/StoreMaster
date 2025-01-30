@@ -19,13 +19,23 @@
 - [Docker](https://www.docker.com/get-started)
 - [Insomnia](https://insomnia.rest/download)
 
+Here’s the corrected version of your **Installation** section:
+
+---
+
 ### Installation
 
-1. **Clone the Repository**
-
+1. **Clone the Repository**  
    ```bash
    git clone https://github.com/yourusername/your-repository.git
    cd your-repository
-2. The API will be available at `http://localhost:5000`.
+   ```
 
-3. Use tools like Postman to test the API endpoints.
+2. Run the command:  
+   ```bash
+   docker run -p 5000:80 <container_name>
+   ```
+
+3. The API will be available at `http://localhost:5000`.
+
+4. Use tools like Postman to test the API endpoints.
