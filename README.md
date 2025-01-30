@@ -18,7 +18,7 @@
    cd your-repository
    ```
 
-2. Run the command:  
+2. **Run the command:**  
    ```bash
    docker run -p 5000:80 <container_name>
    ```
