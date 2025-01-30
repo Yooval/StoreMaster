@@ -10,19 +10,6 @@
 - **Redis**: Enhances performance by caching frequently accessed data.
 - **Docker**: Creates an isolated environment, ensuring consistency across systems.
 
-  
-## Getting Started
-
-### Prerequisites
-
-- [Python 3.8+](https://www.python.org/downloads/)
-- [Docker](https://www.docker.com/get-started)
-- [Insomnia](https://insomnia.rest/download)
-
-Here’s the corrected version of your **Installation** section:
-
----
-
 ### Installation
 
 1. **Clone the Repository**  
